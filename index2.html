@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars RPG</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel= "stylesheet" type = "text/css" href = "assets/css/style.css">
+
+</head>
+<body>
+	<div class = "theGame"> <h1> Star Wars RPG </h1></div>
+	<div class = "instructions"> 
+		<p> Select a character to start the game<br> <br>
+		There are four characters total. Each character has unique attack point, counter-attack points, and defense points.  <br><br>
+		To win the game, you must defeat the remaining three (3) characters. <br><br><p> Things to note: <br>   1) When you attack, the current opposing character will use its counter-attack to weaken your defense. <br>   2) Your attack deals more damage after each attack. Ex: 2nd attack deals twice the damage, 3rd attack deals three times the damage, etc. <br><em> Counter-Attacks by the opposing character remain the same.</em><br><br>
+		May the force be with you! </p>
+	</div>
+	<div class = "listedChars">
+        <button id="char1" ><div id = "n1">Name1</div><div><img src="assets/images/crystal1.jpg"></div><div id = "d1"></div></button>
+
+        <button id="char2" ><div id = "n2">Name2</div><div><img src="assets/images/crystal2.jpg"></div><div id = "d2"></div></button>
+
+        <button id="char3" ><div id = "n3">Name3</div><div><img src="assets/images/crystal3.jpg"></div><div id = "d3"></div></button>
+
+        <button id="char4" ><div id = "n4">Name4</div><div><img src="assets/images/crystal4.jpg"></div><div id = "d4"></div></button>
+	</div>
+	
+	<div class = "theOne"> Your Character: </div> 
+
+	<div class = "enemies">Enemies Available to Attack</div>
+
+	<div class = "arena"> Fighting Section<br><button id="attack" ><img src="assets/images/crystal5.jpg"></button></div>
+
+	<div class = "defender">Defender</div>
+
+
+<!-- <script type="text/javascript" src = "assets/javascript/game2.js"></script> -->
+
+<script type="text/javascript">
+// Giving all my characters a name & associated skill sets
+	var players = {
+		Names: ["Obi-Wan Kenobi","Luke Skywalker","Darth Sidious","Darth Maul"],
+		attack: [5,6,4,7],
+		cAttack: [10,9,11,8],
+		defense : [120,100,150,180]}
+
+// // Assigning the objects to the character/buttons
+// 	$("#char1").val(player1);
+// 	$("#char2").val(player2);
+// 	$("#char3").val(player3);
+// 	$("#char4").val(player4);
+
+	var yourChar;
+//writing my defense to the buttons div. Names too.
+	for (i = 1; i <5; i++){
+	document.querySelector("#d"+i).innerHTML = players.defense[i-1];
+	document.querySelector("#n"+i).innerHTML = players.Names[i-1];
+
+};
+
+//on clicking any of the character-buttons, you will need to move the selected character to the ".theOne" div, the rest should move to the enemies list. This should only be done IF there is not a character yet in the div ".theOne". Using the method "find" to check for any of the characters
+$("button").click(function(){
+	yourChar = this.id; //the id of the character that was clicked on. Ex: "char1"
+	if ($(".theOne").find("#char1","#char2","#char3","#char4" ).length ==0){
+		$(".listedChars").appendTo(".enemies");
+		$("#"+ yourChar).appendTo(".theOne");
+
+}
+
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+

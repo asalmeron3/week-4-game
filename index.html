@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crystal Collector</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel= "stylesheet" type = "text/css" href = "assets/css/style.css">
+<!-- 	<link rel = "javascript" type="text/javascript" src = "assets/javascript/game.js" -->
+
+</head>
+<body>
+	<div class = "theNameOFgame"> <h1> Crystals Collector! </h1></div>
+	<div class = "instructions"> 
+		<p> Click a crystal to start the game! You will be given a random # in the left box below. <br> <br>
+		There are four crystals total. Each crystal is worth a random amount of points; the value changes for each round you play. <br><br>
+		To win the game, match your current score (on the right) to the number on the left. <br><br>
+		Good Luck! </p>
+	</div>
+	<div class = "theRandomNum"> </div>
+	<div class = "theScores"> </div>
+	<div class = "ScoreIs"><h3> Your Current Score: </h3>
+	<div class = "yourScore"></div></div>
+	<div class="theCrystals">
+        <button id="button-1" class="crystal" ><img src="assets/images/crystal1.jpg"></button>
+        <button id="button-2" class="crystal"><img src="assets/images/crystal2.jpg"></button>
+        <button id="button-3" class="crystal"><img src="assets/images/crystal3.jpg"></button>
+        <button id="button-4" class="crystal"><img src="assets/images/crystal4.jpg"></button>
+	</div>
+	
+	<div class = "msg"></div>
+<script type="text/javascript" src = "assets/javascript/game.js"></script>
+
+</body>
+</html>
+
